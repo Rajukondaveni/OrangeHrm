@@ -49,4 +49,15 @@ public class LoginTestCases extends CommonSteps{
 		Assert.assertEquals(actualMessage, "Invalid credentials");
 
 	}
+	
+	@Test(groups = {"regression"}, priority=-1)
+	public void test4() {
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginIntoHrm("dsfsdafgsdfg", "admin123");	
+
+		String actualMessage = loginPage.getLoginErrorMessage();
+		
+		Assert.assertEquals(actualMessage, "Invalid credentials");
+
+	}
 }
